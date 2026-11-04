@@ -1,14 +1,10 @@
 trigger:
-  branches:
-    include:
-    - main
+- main
 
 pr: none
 
-jobs:
-- job: WebhookProbe
-  pool: server
-  steps:
-  - task: Delay@1
-    inputs:
-      delayForMinutes: '0'
+pool: default
+
+steps:
+- script: echo "SC disabled webhook probe"
+  displayName: Webhook probe
